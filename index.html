@@ -4,12 +4,66 @@
     <title>jQuery Salary Calculator</title>
     <script src="jQuery.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css"/>
+
 </head>
-<body>
-    <input id="inputFirstName" placeholder="First Name"></input>
-    <input id="inputLastName" placeholder="Last Name"></input>
-    <input id="inputID" placeholder="ID"></input>
-    <input id="inputTitle" placeholder="Title"></input>
-    <input id="inputAnnualSalary" placeholder="Annual Salary"></input>
+<header id="pageHeader">
+    <h1 id="salaryCalculatorTitle">Salary Calculator</h1>
+</header>
+<body id="pageBody">
+        <h3 id="addEmployeeText">Add Employee</h3>
+    <div>
+        <input id="inputFirstName" placeholder="First Name"></input>
+        <input id="inputLastName" placeholder="Last Name"></input>
+        <input id="inputID" placeholder="ID"></input>
+        <input id="inputTitle" placeholder="Title"></input>
+        <input id="inputAnnualSalary" placeholder="Annual Salary"></input>
+    </div>
+    
+    <div>
+        <button id="submitButton">Submit</button>
+    </div>
+    <div>
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+                <tr>
+                    <td>Jen</td>
+                    <td>Barber</td>
+                    <td>4521</td>
+                    <td>Team Lead</td>
+                    <td>80,000</td>
+                </tr>
+                <tr>
+                    <td>Maurice</td>
+                    <td>Moss</td>
+                    <td>8724</td>
+                    <td>Support Team</td>
+                    <td>58,000</td>
+                </tr>
+                <tr>
+                    <td>Roy</td>
+                    <td>Smith</td>
+                    <td>9623</td>
+                    <td>Quality Assurance</td>
+                    <td>48,000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3 id="totalMonthlyCost">Total Monthly: $15,500.00</h3>
+    </div>
 </body>
 </html>
