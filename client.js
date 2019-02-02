@@ -35,8 +35,7 @@ function submitButtonClick(){
     `);
     //add Salary input to totalMonthlyCost
     totalMonthlyCost = totalMonthlyCost + (annualSalary/12);
-    //display value on DOM
-    $('#totalMonthlyCost').text(totalMonthlyCost);
+    
     //clear inputs on click
     $('#inputFirstName').val('');
     $('#inputLastName').val('');
@@ -44,9 +43,8 @@ function submitButtonClick(){
     $('#inputTitle').val('');
     $('#inputAnnualSalary').val('');
 
-    if (totalMonthlyCost >= 20000){
-        $('#totalMonthlyCost').css('background-color', 'red');
-    }
+    updateTotalMonthlyCost();
+
     $(`.deleteButton-${employeeID}`).data('employeeMonthlySalary', annualSalary/12);
     $(`.deleteButton-${employeeID}`).on('click', deleteButtonClick);
 }// end submitButtonClick
@@ -68,9 +66,16 @@ function deleteButtonClick(){
     let deletedEmployee = $(this).parents('tr');
     deletedEmployee.remove();
     totalMonthlyCost = totalMonthlyCost - deletedEmployeeMonthlySalary;
+    updateTotalMonthlyCost();
+}//end deleteButtonClick
+
+function updateTotalMonthlyCost() {
     $('#totalMonthlyCost').text(totalMonthlyCost);
-    if (totalMonthlyCost <= 20000) {
+    if (totalMonthlyCost >= 20000){
+        $('#totalMonthlyCost').css('background-color', 'red');
+    }
+    else {
         $('#totalMonthlyCost').css('background-color', 'white');
     }
-}//end deleteButtonClick
+}
 
