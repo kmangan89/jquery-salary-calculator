@@ -25,7 +25,7 @@ function submitButtonClick(){
         </tr>    
     `);
     //add Salary input to totalMonthlyCost
-    totalMonthlyCost = totalMonthlyCost += annualSalary;
+    totalMonthlyCost = totalMonthlyCost += (annualSalary/12);
     //display value on DOM
     $('#totalMonthlyCost').text(totalMonthlyCost);
     //clear inputs on click
@@ -34,5 +34,9 @@ function submitButtonClick(){
     $('#inputID').val('');
     $('#inputTitle').val('');
     $('#inputAnnualSalary').val('');
+
+    if (totalMonthlyCost >= 20000){
+        $('#totalMonthlyCost').css('background-color', 'red');
+    }
 }// end submitButtonClick
 
