@@ -34,7 +34,7 @@ function submitButtonClick(){
         </tr>    
     `);
     //add Salary input to totalMonthlyCost
-    totalMonthlyCost = totalMonthlyCost += (annualSalary/12);
+    totalMonthlyCost = totalMonthlyCost + (annualSalary/12);
     //display value on DOM
     $('#totalMonthlyCost').text(totalMonthlyCost);
     //clear inputs on click
@@ -64,8 +64,13 @@ class Employee {
 }
 
 function deleteButtonClick(){
-    console.log($(this).data('employeeMonthlySalary'));
+    let deletedEmployeeMonthlySalary = $(this).data('employeeMonthlySalary');
     let deletedEmployee = $(this).parents('tr');
     deletedEmployee.remove();
+    totalMonthlyCost = totalMonthlyCost - deletedEmployeeMonthlySalary;
+    $('#totalMonthlyCost').text(totalMonthlyCost);
+    if (totalMonthlyCost <= 20000) {
+        $('#totalMonthlyCost').css('background-color', 'white');
+    }
 }//end deleteButtonClick
 
