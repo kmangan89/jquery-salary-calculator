@@ -3,6 +3,7 @@ console.log('JS');
 $(document).ready(onReady);
 
 let totalMonthlyCost = 0;
+let allEmployees = [];
 
 function onReady() {   
     $('#submitButton').on('click', submitButtonClick);
@@ -15,6 +16,13 @@ function submitButtonClick(){
     let employeeID = ($('#inputID').val());
     let employeeTitle = ($('#inputTitle').val());
     let annualSalary = Number($('#inputAnnualSalary').val());
+
+    let newEmployee = new Employee(firstName, lastName, employeeID, employeeTitle, annualSalary);
+
+    allEmployees.push(newEmployee);
+
+    console.log(allEmployees);
+
     $('#employeeTableBody').append(`
         <tr>
             <td>${firstName}</td>
@@ -22,6 +30,7 @@ function submitButtonClick(){
             <td>${employeeID}</td>
             <td>${employeeTitle}</td>
             <td>${annualSalary}</td>
+            <td><button class="deleteButton">Delete</button></td>
         </tr>    
     `);
     //add Salary input to totalMonthlyCost
@@ -39,4 +48,17 @@ function submitButtonClick(){
         $('#totalMonthlyCost').css('background-color', 'red');
     }
 }// end submitButtonClick
+
+//create employee class 
+
+class Employee {
+    constructor(firstName, lastName, employeeID, employeeTitle, annualSalary){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.employeeID = employeeID;
+        this.employeeTitle = employeeTitle;
+        this.annualSalary = annualSalary;
+    }
+}
+
 
