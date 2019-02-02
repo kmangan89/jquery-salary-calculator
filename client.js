@@ -30,7 +30,7 @@ function submitButtonClick(){
             <td>${employeeID}</td>
             <td>${employeeTitle}</td>
             <td>${annualSalary}</td>
-            <td><button class="deleteButton">Delete</button></td>
+            <td><button class="deleteButton-${employeeID}">Delete</button></td>
         </tr>    
     `);
     //add Salary input to totalMonthlyCost
@@ -47,7 +47,8 @@ function submitButtonClick(){
     if (totalMonthlyCost >= 20000){
         $('#totalMonthlyCost').css('background-color', 'red');
     }
-    $('.deleteButton').on('click', deleteButtonClick);
+    $(`.deleteButton-${employeeID}`).data('employeeMonthlySalary', annualSalary/12);
+    $(`.deleteButton-${employeeID}`).on('click', deleteButtonClick);
 }// end submitButtonClick
 
 //create employee class 
@@ -63,7 +64,8 @@ class Employee {
 }
 
 function deleteButtonClick(){
-   let deletedEmployee = $(this).parents('tr');
+    console.log($(this).data('employeeMonthlySalary'));
+    let deletedEmployee = $(this).parents('tr');
     deletedEmployee.remove();
 }//end deleteButtonClick
 
