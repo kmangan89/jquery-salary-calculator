@@ -47,6 +47,7 @@ function submitButtonClick(){
     if (totalMonthlyCost >= 20000){
         $('#totalMonthlyCost').css('background-color', 'red');
     }
+    $('.deleteButton').on('click', deleteButtonClick);
 }// end submitButtonClick
 
 //create employee class 
@@ -61,4 +62,8 @@ class Employee {
     }
 }
 
+function deleteButtonClick(){
+   let deletedEmployee = $(this).parents('tr');
+    deletedEmployee.remove();
+}//end deleteButtonClick
 
