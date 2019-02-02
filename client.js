@@ -25,11 +25,14 @@ function submitButtonClick(){
         </tr>    
     `);
     //add Salary input to totalMonthlyCost
-      totalMonthlyCost = totalMonthlyCost += annualSalary;
+    totalMonthlyCost = totalMonthlyCost += annualSalary;
     //display value on DOM
-      $('#totalMonthlyCost').text(totalMonthlyCost);
+    $('#totalMonthlyCost').text(totalMonthlyCost);
     //clear inputs on click
-  
-
+    $('#inputFirstName').val('');
+    $('#inputLastName').val('');
+    $('#inputID').val('');
+    $('#inputTitle').val('');
+    $('#inputAnnualSalary').val('');
 }// end submitButtonClick
 
