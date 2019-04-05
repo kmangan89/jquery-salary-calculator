@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>jQuery Salary Calculator</title>
-        <script src="jQuery.js"></script>
-        <script src="client.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="styles.css"/>
 
-    </head>
+<head>
+    <title>jQuery Salary Calculator</title>
+    <script src="jQuery.js"></script>
+    <script src="client.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 
-    <body id="pageBody">
+</head>
+
+<body>
+    <div id="pageBody">
         <header id="pageHeader">
             <h1 id="salaryCalculatorTitle">Salary Calculator</h1>
         </header>
         <h3 id="addEmployeeText">Add Employee</h3>
         <div>
-            <input class="employeeInputs" id="inputFirstName" placeholder="First Name"></input>
-            <input class="employeeInputs" id="inputLastName" placeholder="Last Name"></input>
-            <input class="employeeInputs" id="inputID" placeholder="ID"></input>
-            <input class="employeeInputs" id="inputTitle" placeholder="Title"></input>
-            <input class="employeeInputs" id="inputAnnualSalary" placeholder="Annual Salary"></input>
+            <input id="inputFirstName" placeholder="First Name"></input>
+            <input id="inputLastName" placeholder="Last Name"></input>
+            <input id="inputID" placeholder="ID"></input>
+            <input id="inputTitle" placeholder="Title"></input>
+            <input id="inputAnnualSalary" placeholder="Annual Salary"></input>
         </div>
-        
+
         <div>
             <button id="submitButton">Submit</button>
         </div>
-        
+
         <div id="employeeTable">
             <table id="employeeTable">
                 <thead>
@@ -44,5 +46,7 @@
         <div>
             <h4>Total Monthly Cost: $<span id="totalMonthlyCost"></span></h4>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

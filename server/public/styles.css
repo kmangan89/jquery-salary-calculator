@@ -1,11 +1,14 @@
 #pageBody {
     font-family: courier;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #pageHeader {
     background-color: gray;
     text-align: center;
     color: white;
+    margin-left: 0px;
 }
 
 td, tr, th, table {
@@ -27,7 +30,6 @@ th {
 #employeeTable {
     padding-top: 30px;
     padding-bottom: 30px;
-    
 }
 
 
