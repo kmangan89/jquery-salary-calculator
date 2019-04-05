@@ -21,7 +21,6 @@ function submitButtonClick(){
 
     allEmployees.push(newEmployee);
 
-    console.log(allEmployees);
 
     $('#employeeTableBody').append(`
         <tr>
